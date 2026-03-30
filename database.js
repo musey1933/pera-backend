@@ -9,8 +9,9 @@ const pool = mysql.createPool({
   password: process.env.DB_PASS || '',
   database: process.env.DB_NAME || 'pera_db',
   waitForConnections: true,
-  connectionLimit: 10,
-  charset: 'utf8mb4'
+  connectionLimit: 5,
+  charset: 'utf8mb4',
+  ssl: { rejectUnauthorized: false }
 });
 
 // Bağlantıyı test et
